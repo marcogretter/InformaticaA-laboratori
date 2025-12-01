@@ -1,0 +1,30 @@
+//
+//  ex2.cpp
+//  lab2-personale
+//
+//  Created by Marco Gretter on 01/12/25.
+//
+#define N 5
+#include <stdio.h>
+
+int main() {
+    int v[N],i,X,sum=0,product=1;;
+    
+    printf("Da quale cella vuoi iniziare il prodotto tra due numeri?\n");
+    scanf("%d",&X);
+    
+    for(i=0;i<N;i++) {
+        printf("Inserisci valore %d:\n",(i));
+        scanf("%d",&v[i]);
+    }
+    for(i=0;i<X;i++) {
+        sum=sum+v[i];
+    }
+    printf("La somma è: %d\n",sum);
+    
+    for(i=X;i<N;i++) {
+        product=product*v[i];
+    }
+    printf("Il prodotto risulta: %d\n",product);
+    return 0;
+}

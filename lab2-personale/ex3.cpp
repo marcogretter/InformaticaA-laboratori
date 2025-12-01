@@ -1,0 +1,40 @@
+//
+//  ex3.cpp
+//  lab2-personale
+//
+//  Created by Marco Gretter on 01/12/25.
+//
+#define N 500
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int i,k,z,cont=0,cont2=0,x,y;
+    char a[N],b[N];
+    
+    printf("Inserisci la prima stringa:\n");
+    scanf("%s",a);
+    printf("Inserisci la seconda stringa:\n");
+    scanf("%s",b);
+    
+    x=strlen(a);
+    y=strlen(b);
+    
+    for (i=0; i<x; i++) {
+        if(a[i]==b[0])
+        {
+            z=i;
+            for (k=0; k<y; k++) {
+                if(a[z]==b[k]){
+                    z++;
+                    cont++;
+                }
+            }
+            if(cont==y)
+                cont2++;
+            cont=0;
+        }
+    }
+    printf("%s è contenuta in %s %d volte\n",a,b,cont2);
+    return 0;
+}
